@@ -1,0 +1,41 @@
+<h4>Student List</h4> 
+<!-- <br><br>
+<button type="" (click)="buttonClick();">Hello Techies!</button><br><br> -->
+<input type="button" value="Dlete All" (click)="deleteAllStudents()"/> &nbsp;&nbsp;&nbsp;&nbsp;
+<hr>
+ 
+   <label> Id : </label>
+  <input type="text" [(ngModel)]="student.id" name="" placeholder="Enter student id" readonly /> <br><br>
+  <label> First name :</label>
+  <input type="text" [(ngModel)]="student.firstName" name="" placeholder="Enter student first name"/><br><br>
+  <label> Last name :</label>
+  <input type="text" [(ngModel)]="student.lastName" name="" placeholder="Enter student last name"/><br><br>
+  <label> Email : </label>
+  <input type="text" [(ngModel)]="student.email" name="" placeholder="Enter student email"/><br><br>
+  <label> Phone :</label>
+  <input type="text" [(ngModel)]="student.phone" name="" placeholder="Enter student phone"/> <br><br>
+
+   <input type="button" value="Reset" (click)="resetStudent()"/> &nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="button" (click)="addStudent(); " value="Add  student"> &nbsp;&nbsp;&nbsp;&nbsp;
+
+  <input type="button" (click)="addUpdateStudent() " value="Add / Update">
+
+  
+
+<hr>
+
+  
+  <table>
+      <tbody>
+      <tr *ngFor="let p of students">
+        <td>{{p.id}}</td>
+        <td> {{p.firstName}} </td>
+        <td>{{p.lastName}}</td>
+        <td> {{p.email}}  </td>
+        <td> {{p.phone}}</td>
+        <td> <input type="button" (click)="deleteStudent(p.id);" value="Delete Student"> </td> 
+        <td><input type="button" value="Update student" (click)="selectStudent(p)" /> </td> 
+        
+      </tr>
+    </tbody>
+    </table>
